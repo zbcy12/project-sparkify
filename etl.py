@@ -67,9 +67,11 @@ def process_log_file(cur, filepath):
 
 def process_data(cur, conn, filepath, func):
     # get all files from directory
+    all_files = []
     for root, dirs, files in os.walk(filepath):
         files = glob.glob(os.path.join(root, '*.json'))
-        all_files = [os.path.abspath(f) for f in files]
+        for f in files:
+            all_files.append(os.path.abspath(f))
 
     # number of files found
     num_files = len(all_files)
