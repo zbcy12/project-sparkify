@@ -30,9 +30,9 @@ artist_table_create = ("""
 CREATE TABLE IF NOT EXISTS artists (
     artist_id VARCHAR PRIMARY KEY,
     artist_name VARCHAR NOT NULL,
-    location VARCHAR,
-    latitude NUMERIC (7, 5),
-    longitude NUMERIC (7, 5)
+    artist_location VARCHAR,
+    latitude NUMERIC(7, 5),
+    longitude NUMERIC(7, 5)
 );
 """)
 
@@ -80,7 +80,7 @@ DO NOTHING;
 """)
 
 artist_table_insert = ("""
-INSERT INTO artists (artist_id, artist_name, artist_latitude, artist_longitude, artist_location)
+INSERT INTO artists (artist_id, artist_name, latitude, longitude, artist_location)
 VALUES (%s, %s, %s, %s, %s)
 ON CONFLICT (artist_id)
 DO NOTHING;
