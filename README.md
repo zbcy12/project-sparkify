@@ -15,7 +15,7 @@ The fact table contains several forein keys constraints that reference primary k
 - `create_tables.py` initialize the database and create (drop) tables
 - `etl.py` data manipulation with high efficient multiple records insertions (copy_from, extras.execute_values).
 
-# Usage
+# 3. Usage
 Run code from command line:
 
     python create_tables.py
