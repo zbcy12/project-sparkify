@@ -10,9 +10,9 @@ def create_database():
 
     # connect to default database
     try:
-        conn = psycopg2.connect(user="postgres",
-                                password="741100",
-                                dbname="mydb",
+        conn = psycopg2.connect(user="student",
+                                password="student",
+                                dbname="studentdb",
                                 host="127.0.0.1")
         conn.set_session(autocommit=True)
         cur = conn.cursor()
@@ -28,12 +28,10 @@ def create_database():
 
     # connect to sparkifydb
     try:
-        conn = psycopg2.connect(user="postgres",
-                                password="741100",
+        conn = psycopg2.connect(user="student",
+                                password="student",
                                 dbname="sparkifydb",
                                 host="127.0.0.1")
-		# conn = psycopg2.connect(
-		#     "host=127.0.0.1 dbname=sparkifydb user=student password=student")
         cur = conn.cursor()
     except psycopg2.Error as e:
         print(e)
