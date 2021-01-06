@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS artists (
     artist_id VARCHAR PRIMARY KEY,
     artist_name VARCHAR NOT NULL,
     artist_location VARCHAR,
-    latitude NUMERIC(7, 5),
-    longitude NUMERIC(7, 5)
+    latitude NUMERIC,
+    longitude NUMERIC
 );
 """)
 
@@ -67,10 +67,14 @@ CREATE TABLE IF NOT EXISTS songplays (
 # insert data
 user_table_insert = ("""
 INSERT INTO users (user_id, first_name, last_name, gender, level)
-VALUES %s
+VALUES (%s, %s, %s, %s, %s)
 ON CONFLICT (user_id)
-DO NOTHING;
+DO UPDATE SET 
+level=EXCLUDED.level
+WHERE users.level != EXCLUDED.level;
 """)
+
+
 
 song_table_insert = ("""
 INSERT INTO songs (song_id, title, artist_id, year, duration)

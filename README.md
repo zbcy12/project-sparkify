@@ -6,14 +6,14 @@ The project is to build data models for data analytic team to perform user activ
 
 The database is based on PostgreSQL and star schema is designed to optimize the queries on user activity analysis.
 
-The fact table contains several forein keys constraints that reference primary keys in dimension tables. The ER diagram diagram below shows the star schema.
+The fact table contains several forein keys constraints that reference primary keys in dimension tables. The ER diagram below shows the star schema.
 
 ![](image.png)
 
 ## 2.2 Implement ELT 
 - `sql_queries.py` contains the queries with data quality check (create, drop, insert, select) used in this project.
 - `create_tables.py` initialize the database and create (drop) tables
-- `etl.py` data manipulation with high efficient multiple records insertions (copy_from, extras.execute_values).
+- `etl.py` data manipulation with efficient multiple records insertions (copy_from, extras.execute_values).
 
 # 3. Usage
 Run code from command line:
