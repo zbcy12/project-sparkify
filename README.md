@@ -1,3 +1,10 @@
+- [1. Objective](#1-objective)
+- [2. Data Model](#2-data-model)
+  - [2.1 Database Schema](#21-database-schema)
+  - [2.2 Implement ELT](#22-implement-elt)
+- [3. Usage](#3-usage)
+
+
 # 1. Objective
 The project is to build data models for data analytic team to perform user activity analysis, where the data resides in two directories in form of JSON files.
 
